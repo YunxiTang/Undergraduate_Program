@@ -1,0 +1,40 @@
+[System]
+Name='Untitled'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='phi'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Input2]
+Name='x'
+Range=[0 100]
+NumMFs=5
+MF1='S1':'trimf',[10 30 50]
+MF2='CE':'trimf',[30 50 70]
+MF3='B1':'trimf',[50 70 90]
+MF4='S2':'zmf',[10 30]
+MF5='B2':'smf',[70 90]
+
+[Output1]
+Name='theta'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]

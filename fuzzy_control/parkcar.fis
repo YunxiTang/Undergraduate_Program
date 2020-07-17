@@ -1,0 +1,29 @@
+[System]
+Name='parkcar'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[0 100]
+NumMFs=0
+
+[Input2]
+Name='phi'
+Range=[-90 270]
+NumMFs=0
+
+[Output1]
+Name='theta'
+Range=[-30 30]
+NumMFs=0
+
+[Rules]

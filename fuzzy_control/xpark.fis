@@ -1,0 +1,75 @@
+[System]
+Name='xpark'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='x'
+Range=[-400 400]
+NumMFs=5
+MF1='S2':'zmf',[-300 -150]
+MF2='S1':'trimf',[-300 -100 0]
+MF3='CE':'trimf',[-150 0 150]
+MF4='B1':'trimf',[0 100 300]
+MF5='B2':'smf',[150 300]
+
+[Input2]
+Name='phi'
+Range=[-90 270]
+NumMFs=7
+MF1='S3':'zmf',[-70 0]
+MF2='CE':'trimf',[45 90 135]
+MF3='B2':'trimf',[135 175 225]
+MF4='S2':'trimf',[-45 5 45]
+MF5='S1':'trimf',[0 55 90]
+MF6='B1':'trimf',[90 125 180]
+MF7='B3':'smf',[180 250]
+
+[Output1]
+Name='theta'
+Range=[-40 40]
+NumMFs=7
+MF1='S3':'zmf',[-35 -15]
+MF2='CE':'trimf',[-10 0 10]
+MF3='B3':'smf',[15 35]
+MF4='S1':'trimf',[-20 -5 0]
+MF5='B1':'trimf',[0 5 20]
+MF6='S2':'trimf',[-30 -15 -10]
+MF7='B2':'trimf',[10 15 30]
+
+[Rules]
+1 1, 6 (1) : 1
+1 4, 6 (1) : 1
+1 5, 5 (1) : 1
+1 2, 7 (1) : 1
+1 6, 7 (1) : 1
+2 1, 1 (1) : 1
+2 4, 4 (1) : 1
+2 5, 4 (1) : 1
+2 2, 7 (1) : 1
+2 6, 3 (1) : 1
+2 3, 1 (1) : 1
+3 4, 1 (1) : 1
+3 5, 4 (1) : 1
+3 2, 2 (1) : 1
+3 6, 7 (1) : 1
+3 3, 3 (1) : 1
+4 4, 1 (1) : 1
+4 5, 1 (1) : 1
+4 2, 6 (1) : 1
+4 6, 5 (1) : 1
+4 3, 1 (1) : 1
+4 7, 1 (1) : 1
+5 5, 6 (1) : 1
+5 2, 6 (1) : 1
+5 6, 4 (1) : 1
+5 3, 7 (1) : 1
+5 7, 7 (1) : 1

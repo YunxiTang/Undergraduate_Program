@@ -1,0 +1,80 @@
+[System]
+Name='parkcarr'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=32
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='phi'
+Range=[0 180]
+NumMFs=7
+MF1='NB':'trimf',[-30 -4.441e-16 30]
+MF2='NM':'trimf',[0 30 60]
+MF3='NS':'trimf',[30 60 90]
+MF4='ZO':'trimf',[60 90 120]
+MF5='PS':'trimf',[90 120 150]
+MF6='PM':'trimf',[120 150 180]
+MF7='PB':'trimf',[150 180 210]
+
+[Input2]
+Name='x'
+Range=[0 100]
+NumMFs=5
+MF1='NS':'trimf',[10 35 50]
+MF2='ZO':'trimf',[30 50 70]
+MF3='PS':'trimf',[50 65 90]
+MF4='NB':'zmf',[0 30]
+MF5='PB':'smf',[70 100]
+
+[Output1]
+Name='theta'
+Range=[-40 40]
+NumMFs=7
+MF1='NB':'zmf',[-40 -20]
+MF2='ZO':'trimf',[-10 0 10]
+MF3='PB':'smf',[20 40]
+MF4='NM':'trimf',[-35 -20 -10]
+MF5='NS':'trimf',[-20 -8 0]
+MF6='PS':'trimf',[0 8 20]
+MF7='PM':'trimf',[10 20 35]
+
+[Rules]
+1 3, 4 (1) : 1
+1 5, 1 (1) : 1
+2 2, 1 (1) : 1
+2 3, 4 (1) : 1
+2 5, 1 (1) : 1
+3 1, 4 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
+3 5, 7 (1) : 1
+4 4, 1 (1) : 1
+4 1, 5 (1) : 1
+4 2, 2 (1) : 1
+4 3, 6 (1) : 1
+4 5, 7 (1) : 1
+5 4, 4 (1) : 1
+5 1, 2 (1) : 1
+5 2, 3 (1) : 1
+5 3, 7 (1) : 1
+6 4, 3 (1) : 1
+6 1, 7 (1) : 1
+6 2, 3 (1) : 1
+7 4, 3 (1) : 1
+7 1, 7 (1) : 1
+1 4, 4 (1) : 1
+1 1, 1 (1) : 1
+2 4, 4 (1) : 1
+2 1, 5 (1) : 1
+7 5, 3 (1) : 1
+7 3, 7 (1) : 1
+3 4, 4 (1) : 1
+6 5, 3 (1) : 1
+5 5, 7 (1) : 1
